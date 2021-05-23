@@ -34,9 +34,12 @@ zinit light agnoster/agnoster-zsh-theme
 # エイリアス設定
 alias ls='ls -laG'
 alias ll='ls -laG'
+alias vi='nvim'
+alias vim='nvim'
 
 ## コマンド補完
-zinit ice wait'0'; zinit light zsh-users/zsh-completions
+# zinit ice wait'0';
+zinit light zsh-users/zsh-completions
 autoload -Uz compinit && compinit
 
 ## 補完で小文字でも大文字にマッチさせる
@@ -67,3 +70,12 @@ setopt AUTO_CD
 ## 環境変数を補完
 setopt AUTO_PARAM_KEYS
 
+# anyenv
+export PYENV_ROOT="$HOME/.anyenv/envs/pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(anyenv init -)"
+eval "$(pyenv init -)"
+
+# adb
+export PATH="$HOME/.android/platform-tools:$PATH"
