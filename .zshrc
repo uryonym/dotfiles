@@ -6,7 +6,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
  
 # oh my zsh で利用するプラグインを指定
-plugins=(git zsh-syntax-highlighting zsh-completions)
+plugins=(git zsh-syntax-highlighting zsh-completions asdf)
  
 # oh-my-zsh に変更を適用
 source $ZSH/oh-my-zsh.sh
@@ -133,8 +133,9 @@ setopt extended_glob
 # ※ たとえば Ctrl-W でカーソル前の1単語を削除したとき / までで削除が止まる
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
-export PATH="$PATH:$HOME/.anyenv/bin"
 export PATH="$PATH:$HOME/.local/bin"
 
-eval "$(anyenv init -)"
+# asdf settings
+fpath=(${ASDF_DIR}/completions $fpath)
+autoload -Uz compinit && compinit
 
