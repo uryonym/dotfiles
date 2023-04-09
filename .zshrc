@@ -19,9 +19,6 @@ alias vi="nvim"
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#8e8e8e'
 export FREETYPE_PROPERTIES="truetype:interpreter-version=35"
 
-# asdf java settings
-. ~/.asdf/plugins/java/set-java-home.zsh
-
 # android sdk path (react native)
 export ANDROID_SDK_ROOT=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
